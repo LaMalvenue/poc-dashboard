@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
-// eslint-disable-next-line import/no-named-as-default,import/no-named-as-default-member
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
