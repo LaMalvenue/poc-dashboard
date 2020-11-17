@@ -1,0 +1,39 @@
+
+
+header {
+  background-color: #ff8d00;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: white;
+  padding: 0 10px;
+}
+
+main {
+  margin: 60px;
+  margin-left: 260px;
+  max-width: 600px;
+}
+
+.pageTitle {
+  text-align: center;
+  width: 100%;
+}
+
+#container {
+  padding: 0;
+  min-width: 100vw;
+}
+
+footer {
+  background-color: #ff8d00;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+}
+

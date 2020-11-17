@@ -1,0 +1,9 @@
+.breadcrumb {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icone {
+    padding: 0 15px;
+}
