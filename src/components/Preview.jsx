@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
@@ -21,15 +21,8 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const Preview = () => {
+const Preview = ({ state }) => {
   const classes = useStyles();
-  const [state] = useState({
-    speedtest: false,
-    darkmode: false,
-    graphique: false,
-    cours: false,
-    notes: false,
-  });
 
   return (
     <>
@@ -48,7 +41,6 @@ const Preview = () => {
                 </Paper>
               </Grid>
             )}
-
             {state.graphique && (
               <Grid item xs={3}>
                 <Paper>
@@ -61,7 +53,6 @@ const Preview = () => {
                 </Paper>
               </Grid>
             )}
-
             {state.notes && (
               <Grid item xs={3}>
                 <Paper className={classes.paper}>
@@ -74,7 +65,6 @@ const Preview = () => {
                 </Paper>
               </Grid>
             )}
-
             {state.cours && (
               <Grid item xs={3}>
                 <Paper className={classes.paper}>

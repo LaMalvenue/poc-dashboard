@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
@@ -26,15 +26,8 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const UserCard = () => {
+const CustomisationCard = ({ state, setState }) => {
   const classes = useStyles();
-  const [state, setState] = useState({
-    speedtest: false,
-    darkmode: false,
-    graphique: false,
-    cours: false,
-    notes: false,
-  });
 
   const handleChange = (e) => {
     const { name } = e.target;
@@ -109,4 +102,4 @@ const UserCard = () => {
   );
 };
 
-export default UserCard;
+export default CustomisationCard;
