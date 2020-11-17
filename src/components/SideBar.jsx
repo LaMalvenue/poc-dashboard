@@ -40,8 +40,9 @@ const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
+    position: "absolute",
     width: drawerWidth,
-    height: "calc( 100% - 140px)",
+    height: "calc(100% - 140px)",
     top: "80px",
   },
   content: {
