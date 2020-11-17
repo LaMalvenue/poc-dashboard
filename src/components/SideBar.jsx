@@ -41,13 +41,12 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    top: "115px",
+    bottom: "50px",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-  },
-  sidebar: {
-    top: "225px",
   },
 }));
 
@@ -62,8 +61,6 @@ function SideBar() {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
-      <Divider />
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
@@ -103,7 +100,6 @@ function SideBar() {
             onClose={handleDrawerToggle}
             classes={{
               paper: classes.sidebar,
-              sidebar: classes.sidebar,
             }}
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.

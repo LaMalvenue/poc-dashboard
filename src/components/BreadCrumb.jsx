@@ -12,20 +12,20 @@ import SettingsIcon from "@material-ui/icons/Settings";
 const BreadCrumb = () => {
   return (
     <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
-      <Link color="inherit" href="/" className={classes.link}>
-        <HomeIcon className={`${classes.icon} icone`} />
+      <Link color="inherit" href="/" className={`${classes.link} item`}>
+        <HomeIcon className={classes.icon} />
         Accueil
       </Link>
-      <Link color="inherit" href="/" className={classes.link}>
-        <SchoolIcon className={`${classes.icon} icone`} />
+      <Link color="inherit" href="/" className={`${classes.link} item`}>
+        <SchoolIcon className={classes.icon} />
         Ma classe
       </Link>
-      <Link color="inherit" href="/" className={classes.link}>
-        <PersonIcon className={`${classes.icon} icone`} />
+      <Link color="inherit" href="/" className={`${classes.link} item`}>
+        <PersonIcon className={classes.icon} />
         Mon profil
       </Link>
-      <Typography color="textPrimary" className={classes.link}>
-        <SettingsIcon className={`${classes.icon} icone`} />
+      <Typography color="textPrimary" className={`${classes.link} item`}>
+        <SettingsIcon className={classes.icon} />
         Personnaliser
       </Typography>
     </Breadcrumbs>
