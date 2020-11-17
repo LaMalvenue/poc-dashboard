@@ -6,6 +6,7 @@ import UserCard from "./UserCard";
 import BreadCrumb from "./BreadCrumb";
 import SiteTitle from "./SiteTitle";
 import SideBar from "./SideBar";
+import Preview from "./Preview";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <BreadCrumb />
         <UserCard />
       </main>
+      <Preview />
       <footer>
         <p>&copy; 2020 Wild Code School - Groupe 3</p>
       </footer>
