@@ -92,6 +92,7 @@ const Preview = ({ state }) => {
                   <img
                     alt=""
                     src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
+                    width="650px"
                   />
                 </Modal>
               </Grid>
@@ -117,6 +118,7 @@ const Preview = ({ state }) => {
                   <img
                     src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
                     alt=""
+                    width="650px"
                   />
                 </Modal>
               </Grid>
@@ -142,6 +144,7 @@ const Preview = ({ state }) => {
                   <img
                     src="https://www.seankennedyportfolio.com/images/notes1.PNG"
                     alt=""
+                    width="650px"
                   />
                 </Modal>
               </Grid>
@@ -166,6 +169,7 @@ const Preview = ({ state }) => {
                 >
                   <img
                     alt=""
+                    width="650px"
                     src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
                   />
                 </Modal>
