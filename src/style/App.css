@@ -1,8 +1,6 @@
-
-
 header {
-  background-color: #ff8d00;
-  min-height: 75px;
+  background-color: darkorange;
+  height: 80px;
   display: flex;
   align-items: center;
   font-size: 1.3rem;
@@ -13,7 +11,7 @@ header {
 main {
   margin: 60px;
   margin-left: 260px;
-  max-width: 600px;
+  max-width: 1100px;
 }
 
 .pageTitle {
@@ -29,8 +27,8 @@ main {
 footer {
   position: absolute;
   bottom: 0; right: 0; left: 0;
-  background-color: #ff8d00;
-  height: 50px;
+  background-color: darkorange;
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;

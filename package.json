@@ -19,6 +19,7 @@
     "@testing-library/user-event": "^12.2.2",
     "fontsource-roboto": "^3.0.3",
     "istanbul-lib-coverage": "^3.0.0",
+    "postcss-loader": "^4.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
