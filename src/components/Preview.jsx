@@ -11,7 +11,6 @@ const useStyles = makeStyles(() =>
     root: {
       maxWidth: 1100,
       padding: 15,
-      minHeight: 250,
     },
     paper: {
       textAlign: "center",
@@ -67,7 +66,10 @@ const Preview = ({ state }) => {
   return (
     <div className={classes.root}>
       <h3>Prévisualisation</h3>
-      <Card className={state.darkmode ? classes.darkmode : null}>
+      <Card
+        className={state.darkmode ? classes.darkmode : null}
+        style={{ minHeight: "150px" }}
+      >
         <CardContent className={classes.paper}>
           <Grid container spacing={6}>
             {state.speedtest && (
