@@ -12,6 +12,7 @@ import Switch from "@material-ui/core/Switch";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Modal from '@material-ui/core/Modal';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -25,10 +26,24 @@ const useStyles = makeStyles(() =>
     darkmode: {
       backgroundColor: "black",
     },
+    paperModal: {
+      position: 'absolute',
+      width: '100%',
+      display: "flex",
+      justifyContent: "center",
+      border: 'none',
+      alignItems: "center",
+    },
   })
 );
 
 const UserCard = () => {
+  const [openDarkMode, setOpenDarkMode] = useState(false);
+  const [openSpeedtest, setOpenSpeedtest] = useState(false);
+  const [openGraph, setOpenGraph] = useState(false);
+  const [openCourse, setOpenCourse] = useState(false);
+  const [openNotes, setOpenNotes] = useState(false);
+
   const classes = useStyles();
   const [state, setState] = useState({
     speedtest: false,
@@ -37,6 +52,38 @@ const UserCard = () => {
     cours: false,
     notes: false,
   });
+
+  const handleOpenDarkMode = () => {
+    setOpenDarkMode(true);
+  };
+  const handleOpenSpeedtest = () => {
+    setOpenSpeedtest(true);
+  };
+  const handleOpenGraph = () => {
+    setOpenGraph(true);
+  };
+  const handleOpenCourse = () => {
+    setOpenCourse(true);
+  };
+  const handleOpenNotes = () => {
+    setOpenNotes(true);
+  };
+
+  const handleCloseDarkMode = () => {
+    setOpenDarkMode(false);
+  };
+  const handleCloseSpeedtest = () => {
+    setOpenSpeedtest(false);
+  };
+  const handleCloseGraph = () => {
+    setOpenGraph(false);
+  };
+  const handleCloseCourse = () => {
+    setOpenCourse(false);
+  };
+  const handleCloseNotes = () => {
+    setOpenNotes(false);
+  };
 
   const handleChange = (e) => {
     const { name } = e.target;
@@ -132,7 +179,7 @@ const UserCard = () => {
           <Grid container spacing={6}>
             {state.speedtest && (
               <Grid item xs={3}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} onClick={handleOpenSpeedtest}>
                   <img
                     alt=""
                     src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
@@ -140,12 +187,24 @@ const UserCard = () => {
                     height="80px"
                   />
                 </Paper>
+                <Modal
+                  className={classes.paperModal}
+                  open={openSpeedtest}
+                  onClose={handleCloseSpeedtest}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                  >
+                  <img
+                    alt=""
+                    src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
+                  />
+                </Modal>
               </Grid>
             )}
 
             {state.graphique && (
               <Grid item xs={3}>
-                <Paper>
+                <Paper onClick={handleOpenGraph}>
                   <img
                     src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
                     width="150px"
@@ -153,12 +212,24 @@ const UserCard = () => {
                     alt=""
                   />
                 </Paper>
+                <Modal
+                  className={classes.paperModal}
+                  open={openGraph}
+                  onClose={handleCloseGraph}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <img
+                    src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
+                    alt=""
+                  />
+                </Modal>
               </Grid>
             )}
 
             {state.notes && (
               <Grid item xs={3}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} onClick={handleOpenNotes} >
                   <img
                     src="https://www.seankennedyportfolio.com/images/notes1.PNG"
                     alt=""
@@ -166,12 +237,24 @@ const UserCard = () => {
                     height="80px"
                   />
                 </Paper>
+                <Modal
+                  className={classes.paperModal}
+                  open={openNotes}
+                  onClose={handleCloseNotes}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <img
+                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    alt=""
+                  />
+                </Modal>
               </Grid>
             )}
 
             {state.cours && (
               <Grid item xs={3}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} onClick={handleOpenCourse}>
                   <img
                     alt=""
                     src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
@@ -179,6 +262,18 @@ const UserCard = () => {
                     height="80px"
                   />
                 </Paper>
+                <Modal
+                  className={classes.paperModal}
+                  open={openCourse}
+                  onClose={handleCloseCourse}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <img
+                    alt=""
+                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
+                  />
+                </Modal>
               </Grid>
             )}
           </Grid>
