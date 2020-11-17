@@ -27,8 +27,8 @@ function App() {
         <SideBar />
         <BreadCrumb />
         <CustomisationCard state={state} setState={setState} />
+        <Preview state={state} />
       </main>
-      <Preview state={state} />
       <footer>
         <p>&copy; 2020 Wild Code School - Groupe 3</p>
       </footer>

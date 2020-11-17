@@ -9,10 +9,10 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       maxWidth: 1100,
-      height: "1000px",
+      padding: 15,
+      height: 200,
     },
     paper: {
-      height: "1000px",
       textAlign: "center",
     },
     darkmode: {
@@ -25,7 +25,7 @@ const Preview = ({ state }) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.root}>
       <Card className={state.darkmode ? classes.darkmode : null}>
         <CardContent className={classes.paper}>
           <Grid container spacing={6}>
@@ -80,7 +80,7 @@ const Preview = ({ state }) => {
           </Grid>
         </CardContent>
       </Card>
-    </>
+    </div>
   );
 };
 
