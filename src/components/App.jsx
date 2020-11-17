@@ -21,7 +21,7 @@ function App() {
     <Container id="container">
       <header>
         <SiteTitle />
-        <h2 className="pageTitle">Dashboard</h2>
+        <h2 className="pageTitle">Paramètres</h2>
       </header>
       <main>
         <SideBar />
