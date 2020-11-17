@@ -10,7 +10,7 @@ header {
 
 main {
   height: calc(100vh - 80px);
-  margin-left: 240px;
+  margin-left: 300px;
   padding: 25px;
   background-color: cornsilk;
 }

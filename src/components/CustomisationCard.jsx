@@ -21,7 +21,7 @@ const useStyles = makeStyles(() =>
       backgroundColor: "black",
     },
     button: {
-      margin: "35px 0",
+      margin: "35px 0 0 0",
     },
   })
 );
