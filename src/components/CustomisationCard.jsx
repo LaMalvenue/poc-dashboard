@@ -76,18 +76,6 @@ const CustomisationCard = ({ state, setState }) => {
             control={
               <Switch
                 color="primary"
-                name="graphique"
-                size="medium"
-                checked={state.graphique}
-                onChange={handleChange}
-              />
-            }
-            label="Afficher les graphiques"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                color="primary"
                 name="notes"
                 size="medium"
                 checked={state.notes}
@@ -107,6 +95,18 @@ const CustomisationCard = ({ state, setState }) => {
               />
             }
             label="Afficher la liste des prochains cours"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                color="primary"
+                name="graphique"
+                size="medium"
+                checked={state.graphique}
+                onChange={handleChange}
+              />
+            }
+            label="Afficher les graphiques"
           />
         </FormGroup>
         <Button variant="contained" color="primary" className={classes.button}>
