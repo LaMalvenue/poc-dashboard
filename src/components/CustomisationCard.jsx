@@ -23,6 +23,14 @@ const useStyles = makeStyles(() =>
     button: {
       margin: "35px 0 0 0",
     },
+    modal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      position: "absolute",
+      width: 1600,
+      border: "2px solid #646464",
+    },
   })
 );
 

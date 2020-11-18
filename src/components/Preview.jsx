@@ -10,58 +10,32 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       maxWidth: 1100,
-      padding: 15,
     },
     paper: {
+      height: "100px",
       textAlign: "center",
     },
     darkmode: {
       backgroundColor: "black",
     },
-    paperModal: {
-      position: "absolute",
-      width: "100%",
+    modal: {
       display: "flex",
-      justifyContent: "center",
-      border: "none",
       alignItems: "center",
+      justifyContent: "center",
+      position: "absolute",
+      width: 1600,
+      border: "2px solid #646464",
     },
   })
 );
 
 const Preview = ({ state }) => {
-  const [openSpeedtest, setOpenSpeedtest] = useState(false);
-  const [openGraph, setOpenGraph] = useState(false);
-  const [openCourse, setOpenCourse] = useState(false);
-  const [openNotes, setOpenNotes] = useState(false);
-
   const classes = useStyles();
 
-  const handleOpenSpeedtest = () => {
-    setOpenSpeedtest(true);
-  };
-  const handleOpenGraph = () => {
-    setOpenGraph(true);
-  };
-  const handleOpenCourse = () => {
-    setOpenCourse(true);
-  };
-  const handleOpenNotes = () => {
-    setOpenNotes(true);
-  };
-
-  const handleCloseSpeedtest = () => {
-    setOpenSpeedtest(false);
-  };
-  const handleCloseGraph = () => {
-    setOpenGraph(false);
-  };
-  const handleCloseCourse = () => {
-    setOpenCourse(false);
-  };
-  const handleCloseNotes = () => {
-    setOpenNotes(false);
-  };
+  const [openspeedtest, setSpeedtest] = useState(false);
+  const [opencours, setCours] = useState(false);
+  const [opengraphique, setGraphique] = useState(false);
+  const [opennotes, setnotes] = useState(false);
 
   return (
     <div className={classes.root}>
@@ -70,11 +44,14 @@ const Preview = ({ state }) => {
         className={state.darkmode ? classes.darkmode : null}
         style={{ minHeight: "150px" }}
       >
-        <CardContent className={classes.paper}>
+        <CardContent>
           <Grid container spacing={6}>
             {state.speedtest && (
               <Grid item xs={3}>
-                <Paper className={classes.paper} onClick={handleOpenSpeedtest}>
+                <Paper
+                  className={classes.paper}
+                  onClick={() => setSpeedtest(true)}
+                >
                   <img
                     alt=""
                     src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
@@ -83,16 +60,65 @@ const Preview = ({ state }) => {
                   />
                 </Paper>
                 <Modal
-                  className={classes.paperModal}
-                  open={openSpeedtest}
-                  onClose={handleCloseSpeedtest}
+                  className={classes.modal}
+                  open={openspeedtest}
+                  onClose={() => setSpeedtest(false)}
                   aria-labelledby="simple-modal-title"
                   aria-describedby="simple-modal-description"
                 >
                   <img
                     alt=""
-                    src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
-                    width="650px"
+                    src="https://pbs.twimg.com/media/D6D91h7W0AM4YXs.jpg"
+                    width="550px"
+                  />
+                </Modal>
+              </Grid>
+            )}
+            {state.notes && (
+              <Grid item xs={3}>
+                <Paper className={classes.paper} onClick={() => setnotes(true)}>
+                  <img
+                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    alt=""
+                    width="150px"
+                    height="80px"
+                  />
+                </Paper>
+                <Modal
+                  className={classes.modal}
+                  open={opennotes}
+                  onClose={() => setnotes(false)}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <img
+                    alt=""
+                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    width="550px"
+                  />
+                </Modal>
+              </Grid>
+            )}
+            {state.cours && (
+              <Grid item xs={3}>
+                <Paper className={classes.paper} onClick={() => setCours(true)}>
+                  <img
+                    alt=""
+                    width="150px"
+                    height="80px"
+                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
+                  />
+                </Paper>
+                <Modal
+                  className={classes.modal}
+                  open={opencours}
+                  onClose={() => setCours(false)}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <img
+                    alt=""
+                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
                   />
                 </Modal>
               </Grid>
@@ -100,77 +126,27 @@ const Preview = ({ state }) => {
 
             {state.graphique && (
               <Grid item xs={3}>
-                <Paper onClick={handleOpenGraph}>
-                  <img
-                    src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
-                    width="150px"
-                    height="80px"
-                    alt=""
-                  />
-                </Paper>
-                <Modal
-                  className={classes.paperModal}
-                  open={openGraph}
-                  onClose={handleCloseGraph}
-                  aria-labelledby="simple-modal-title"
-                  aria-describedby="simple-modal-description"
+                <Paper
+                  className={classes.paper}
+                  onClick={() => setGraphique(true)}
                 >
                   <img
                     src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
                     alt=""
-                    width="650px"
-                  />
-                </Modal>
-              </Grid>
-            )}
-
-            {state.notes && (
-              <Grid item xs={3}>
-                <Paper className={classes.paper} onClick={handleOpenNotes}>
-                  <img
-                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
-                    alt=""
                     width="150px"
                     height="80px"
                   />
                 </Paper>
                 <Modal
-                  className={classes.paperModal}
-                  open={openNotes}
-                  onClose={handleCloseNotes}
+                  className={classes.modal}
+                  open={opengraphique}
+                  onClose={() => setGraphique(false)}
                   aria-labelledby="simple-modal-title"
                   aria-describedby="simple-modal-description"
                 >
                   <img
-                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
                     alt=""
-                    width="650px"
-                  />
-                </Modal>
-              </Grid>
-            )}
-
-            {state.cours && (
-              <Grid item xs={3}>
-                <Paper className={classes.paper} onClick={handleOpenCourse}>
-                  <img
-                    alt=""
-                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
-                    width="150px"
-                    height="80px"
-                  />
-                </Paper>
-                <Modal
-                  className={classes.paperModal}
-                  open={openCourse}
-                  onClose={handleCloseCourse}
-                  aria-labelledby="simple-modal-title"
-                  aria-describedby="simple-modal-description"
-                >
-                  <img
-                    alt=""
-                    width="650px"
-                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
                   />
                 </Modal>
               </Grid>
