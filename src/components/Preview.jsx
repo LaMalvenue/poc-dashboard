@@ -121,6 +121,7 @@ const Preview = ({ state }) => {
                 >
                   <img
                     alt=""
+                    width="550px"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpF8J4kb4scACPE88tvEGMDmDSPRMoWjOveA&usqp=CAU"
                   />
                 </Modal>
