@@ -45,12 +45,27 @@ const CustomisationCard = ({ state, setState }) => {
   return (
     <Card className={classes.root}>
       <CardContent>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <FormControlLabel
+            control={
+              <Switch
+                color="primary"
+                name="darkmode"
+                size="medium"
+                checked={state.darkmode}
+                onChange={handleChange}
+              />
+            }
+            label="Passer en mode sombre"
+          />
+        </div>
         <FormGroup>
           <FormControlLabel
             control={
               <Switch
                 color="primary"
                 name="speedtest"
+                size="medium"
                 checked={state.speedtest}
                 onChange={handleChange}
               />
@@ -61,18 +76,8 @@ const CustomisationCard = ({ state, setState }) => {
             control={
               <Switch
                 color="primary"
-                name="darkmode"
-                checked={state.darkmode}
-                onChange={handleChange}
-              />
-            }
-            label="Passer en mode sombre"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                color="primary"
                 name="graphique"
+                size="medium"
                 checked={state.graphique}
                 onChange={handleChange}
               />
@@ -84,6 +89,7 @@ const CustomisationCard = ({ state, setState }) => {
               <Switch
                 color="primary"
                 name="notes"
+                size="medium"
                 checked={state.notes}
                 onChange={handleChange}
               />
@@ -94,6 +100,7 @@ const CustomisationCard = ({ state, setState }) => {
             control={
               <Switch
                 color="primary"
+                size="medium"
                 name="cours"
                 checked={state.cours}
                 onChange={handleChange}

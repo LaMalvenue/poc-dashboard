@@ -39,8 +39,8 @@ function App() {
         <SiteTitle />
         <h2 className={classes.siteTitle}>Paramètres</h2>
       </header>
+      <SideBar />
       <main>
-        <SideBar />
         <BreadCrumb />
         <CustomisationCard state={state} setState={setState} />
         <Preview state={state} />

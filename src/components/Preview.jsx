@@ -6,25 +6,31 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Modal from "@material-ui/core/Modal";
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 1100,
     },
     paper: {
-      height: "100px",
+      height: "170px",
+      margin: theme.spacing(2),
       textAlign: "center",
+      color: theme.palette.text.secondary,
     },
     darkmode: {
       backgroundColor: "black",
+      transition: "0.3s",
+    },
+    ligthmode: {
+      backgroundColor: "white",
+      transition: "0.5s",
     },
     modal: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       position: "absolute",
-      width: 1600,
-      border: "2px solid #646464",
+      width: "100%",
     },
   })
 );
@@ -40,14 +46,11 @@ const Preview = ({ state }) => {
   return (
     <div className={classes.root}>
       <h3>Prévisualisation</h3>
-      <Card
-        className={state.darkmode ? classes.darkmode : null}
-        style={{ minHeight: "150px" }}
-      >
-        <CardContent>
-          <Grid container spacing={6}>
+      <Card className={state.darkmode ? classes.darkmode : classes.ligthmode}>
+        <CardContent style={{ minHeight: "40vh", display: "flex" }}>
+          <Grid container direction="row" alignItems="center">
             {state.speedtest && (
-              <Grid item xs={3}>
+              <Grid item xs={6} sm={3}>
                 <Paper
                   className={classes.paper}
                   onClick={() => setSpeedtest(true)}
@@ -55,8 +58,8 @@ const Preview = ({ state }) => {
                   <img
                     alt=""
                     src="https://www.universfreebox.com/UserFiles/image/perf.JPG"
-                    width="150px"
-                    height="80px"
+                    width="100%"
+                    height="100%"
                   />
                 </Paper>
                 <Modal
@@ -78,10 +81,10 @@ const Preview = ({ state }) => {
               <Grid item xs={3}>
                 <Paper className={classes.paper} onClick={() => setnotes(true)}>
                   <img
-                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlrYKexA5OuvFxIuONCB8rIzjeAW04ZGJNMQ&usqp=CAU"
                     alt=""
-                    width="150px"
-                    height="80px"
+                    width="100%"
+                    height="100%"
                   />
                 </Paper>
                 <Modal
@@ -93,7 +96,7 @@ const Preview = ({ state }) => {
                 >
                   <img
                     alt=""
-                    src="https://www.seankennedyportfolio.com/images/notes1.PNG"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlrYKexA5OuvFxIuONCB8rIzjeAW04ZGJNMQ&usqp=CAU"
                     width="550px"
                   />
                 </Modal>
@@ -104,9 +107,9 @@ const Preview = ({ state }) => {
                 <Paper className={classes.paper} onClick={() => setCours(true)}>
                   <img
                     alt=""
-                    width="150px"
-                    height="80px"
-                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
+                    width="100%"
+                    height="100%"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpF8J4kb4scACPE88tvEGMDmDSPRMoWjOveA&usqp=CAU"
                   />
                 </Paper>
                 <Modal
@@ -118,7 +121,7 @@ const Preview = ({ state }) => {
                 >
                   <img
                     alt=""
-                    src=" https://static.infragistics.com/marketing/Website/products/ignite/controls/scheduling/schedule/igniteui-scheduling-main-s.png?v=201706200900"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpF8J4kb4scACPE88tvEGMDmDSPRMoWjOveA&usqp=CAU"
                   />
                 </Modal>
               </Grid>
@@ -131,10 +134,10 @@ const Preview = ({ state }) => {
                   onClick={() => setGraphique(true)}
                 >
                   <img
-                    src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
+                    src="https://cdn.pixabay.com/photo/2018/01/07/20/56/graph-3068300_1280.jpg"
                     alt=""
-                    width="150px"
-                    height="80px"
+                    width="100%"
+                    height="100%"
                   />
                 </Paper>
                 <Modal
@@ -145,8 +148,9 @@ const Preview = ({ state }) => {
                   aria-describedby="simple-modal-description"
                 >
                   <img
-                    src="https://s3.amazonaws.com/assets.fullstack.io/n/20200309095518221_react-chartjs.png"
+                    src="https://cdn.pixabay.com/photo/2018/01/07/20/56/graph-3068300_1280.jpg"
                     alt=""
+                    width="550px"
                   />
                 </Modal>
               </Grid>
